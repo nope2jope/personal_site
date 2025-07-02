@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROLL!!</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body >
+
+    <div class="container" id="menu-container">
+        <div id="about-menu">
+            <div id="about-body">
+                <p>ROLL!! is a pixel art dice roller by <a target="_blank" href="https://josephkisbye.com/">Joseph Kisbye</a>.
+                <p>Sounds sourced from the following:
+                    <ul>
+                        <li><a target="_blank" href="https://freesound.org/s/108615/">Billiard balls single hit-dry.wav by juskiddink</a></li>
+                        <li><a target="_blank" href="https://freesound.org/s/506914/">Dice_Roll.mp3 by schoman3</a></li>
+                        <li><a target="_blank" href="https://freesound.org/s/220744/">dice_06.wav by dermotte</a></li>
+                    </ul>
+                </p>
+                <div><a target="_blank" href="https://josephkisbye.com/">josephkisbye.com</a></div>
+            <div id="close-menu-button"><img src="assets/buttonX.png" alt="">
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container" id="input-screen">
+        <!-- DICE TYPES -->
+        <div class="count-row">
+            <div class="center">
+                <div class="d-count center"><img src="assets/count4.png" alt=""></div>
+                <div class="d-count center"><img src="assets/count6.png" alt=""></div>
+                <div class="d-count center"><img src="assets/count8.png" alt=""></div>
+                <div class="d-count center"><img src="assets/count10.png" alt=""></div>
+                <div class="d-count center"><img src="assets/count12.png" alt=""></div>
+                <div class="d-count center"><img src="assets/count20.png" alt=""></div>
+            </div>
+
+            <!-- DICE COUNT -->
+            <div class="center">
+                <div class="n-count center">
+                    <img id="d4-counter" src="assets/num0.png" alt="">
+                </div>
+                <div class="n-count center">
+                    <img id="d6-counter" src="assets/num0.png" alt="">
+                </div>
+                <div class="n-count center">
+                    <img id="d8-counter" src="assets/num0.png" alt="">
+                </div>
+                <div class="n-count center">
+                    <img id="d10-counter" src="assets/num0.png" alt="">
+                </div>
+                <div class="n-count center">
+                    <img id="d12-counter" src="assets/num0.png" alt="">
+                </div>
+                <div class="n-count center">
+                    <img id="d20-counter" src="assets/num0.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- DICE SELECTORS -->
+        <div class="center selection-row">
+            <div id="left-arrow">
+                <img src="assets/buttonleftarrow.png" alt="">
+            </div>
+            <div >
+                <img id="dice-name" src="assets/name20.png" alt="">
+            </div>
+            <div id="right-arrow">
+                <img src="assets/buttonrightarrow.png" alt="">
+            </div>
+        </div>
+
+        <!-- DICE CHOICE -->
+        <div class="center display-row">
+            <div><img id="minus-button" src="assets/buttonminus2.png" alt=""></div>
+            <div><img id="dice-choice" src="assets/d20sprite.png" alt=""></div>
+            <div><img id="plus-button" src="assets/buttonplus2.png" alt=""></div>
+        </div>
+
+        <!-- ROLL BUTTON -->
+        <div class="center">
+            <div>
+                <img id="roll-button" src="assets/buttonroll1static.png" alt="">
+            </div>
+        </div>
+
+        <!-- OPTIONS -->
+        <div class="space-between options-row">
+            <div id="q-button">
+                <img src="assets/buttonQ.png" alt="">
+            </div>
+            <div id="x-button">
+                <img src="assets/buttonX.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- RESULT SCREEN -->
+    <div class="container" id="result-screen">
+        <div id="counted-four" class="d-counted-sng">
+            <img src="assets/count4.png" alt="">
+            <div class="d-single" id="d4-counted">
+            </div>
+        </div>
+        <div id="counted-six" class="d-counted-sng">
+            <img src="assets/count6.png" alt="">
+            <div class="d-single" id="d6-counted">
+            </div>
+        </div>
+        <div id="counted-eight" class="d-counted-sng">
+            <img src="assets/count8.png" alt="">
+            <div class="d-single" id="d8-counted">
+            </div>
+        </div>
+        <div id="counted-ten" class="d-counted-dbl">
+            <img src="assets/count10.png" alt="">
+            <div class="d-double" id="d10-counted">
+            </div>
+        </div>
+        <div id="counted-twelve" class="d-counted-dbl">
+            <img src="assets/count12.png" alt="">
+            <div class="d-double" id="d12-counted">
+            </div>
+        </div>
+        <div id="counted-twenty" class="d-counted-dbl">
+            <img src="assets/count20.png" alt="">
+            <div class="d-double" id="d20-counted">
+            </div>
+        </div>
+
+        <div id="sum-row" class="center">
+            <div class="hidden generated" id="total-sprite"><img src="assets/total_sprite.png" alt=""></div>
+            <div class="hidden generated" id="total-sum-calculated">
+                <img id="column-total-digit-0" class="column-total-digit" src="" alt="">
+                <img id="column-total-digit-1" class="column-total-digit" src="" alt="">
+                <img id="column-total-digit-2" class="column-total-digit" src="" alt="">
+                
+                <!-- <p id="sum-text"></p> -->
+            </div>
+        </div>
+
+        <!-- OPTIONS -->
+        <div class="space-between options-row">
+            <div id="skip-button">
+                <img src="assets/buttonskip.png" alt="">
+            </div>
+            <div id="refresh-button">
+                <img src="assets/buttonrefresh.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+
+</html>

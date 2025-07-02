@@ -1,0 +1,344 @@
+@font-face {
+    font-family: DiceText;
+    src: url("assets/DRoll.ttf")
+}
+
+@font-face {
+    font-family: "Sedate";
+    src: url("Sedate.ttf")
+}
+
+html {
+    width: 400px;
+    max-width: 400px;
+    height: 600px;
+    max-height: 600px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+body {
+    width: 400px;
+    max-width: 400px;
+    height: 600px;
+    max-height: 600px;
+
+    background-image: url('assets/dicebg_pattern.png');
+    background-color: rgb(27, 11, 0);
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/* .bg-img {
+    z-index: -1;
+    opacity: .5;
+    position: absolute;
+    width: auto;
+    overflow: hidden;
+} */
+
+img {
+    width: auto;
+    height: 100%;
+}
+
+a, p {
+    color: #ffd541;
+    font-family: "Sedate";
+    line-height: normal;
+    text-decoration: none;
+
+}
+
+ul, li {
+    color: #ffd541;
+}
+
+.container {
+    width: 400px;
+    max-width: 400px;
+    height: 600px;
+    max-height: 600px;
+    background-color: #221c1a;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+
+.center {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hidden {
+visibility: hidden;}
+
+.revealed {
+visibility: visible;}
+
+/* INPUT SCREEN */
+
+.count-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.d-count {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 52px;
+    height: 38px;
+}
+
+.n-count {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 52px;
+    height: 30px;
+}
+
+.selection-row {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.display-row {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.options-row {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* RESULTS SCREEN */
+
+.counted {
+    display: inline-block;
+    margin-right: 10px;
+    height: 20px;
+}
+
+.d-single {
+    padding-left: 29px;
+    display: flex;
+    align-items: center;
+}
+
+.d-double {
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.d-counted-sng {
+    display: flex;
+    flex-direction: row;
+    padding-left: 34px;
+    padding-top: 30px;
+    width: 52px;
+    height: 38px;
+}
+
+.d-counted-dbl {
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    padding-top: 30px;
+    width: 52px;
+    height: 38px;
+}
+
+.column-total-digit {
+    height: 60px;
+    width: auto;
+}
+
+.row-total {
+    padding-right: 30px;
+}
+
+.total-text {
+    font-family: "DiceText";
+}
+
+/* ID'D ELEMENTS */
+
+#left-arrow,
+#right-arrow,
+#minus-button,
+#plus-button,
+#roll-button,
+#q-button,
+#x-button,
+#refresh-button {
+    cursor: pointer;
+}
+
+#left-arrow {
+    margin-right: 40px;
+    width: 44px;
+    height: 70px;
+}
+
+#right-arrow {
+    margin-left: 40px;
+    width: 44px;
+    height: 70px;
+}
+
+#dice-name {
+    width: 84px;
+    height: 42px;
+}
+
+
+#dice-choice {
+    width: 160px;
+    height: 160px;
+}
+
+#minus-button {
+    margin-right: 20px;
+    width: 80px;
+    height: 60px;
+}
+
+#plus-button {
+    margin-left: 20px;
+    width: 80px;
+    height: 60px;
+}
+
+#q-button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+}
+
+#x-button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+}
+
+#refresh-button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+}
+
+#skip-button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+}
+
+#input-screen {
+    position: relative;
+}
+
+#result-screen {
+    display: none;
+    position: relative;
+}
+
+#menu-container {
+    display: none; 
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.671);
+    z-index: 5;
+
+}
+
+#about-menu {
+    background-color: #221c1a;
+    width: 300px;
+    height: 500px;
+    margin: 6%;
+    padding: 25px;
+    position: relative;
+}
+
+#about-body {
+    height: 95%;
+    position: relative;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: #ffd541;
+    padding: 5% 8% 0 5%;
+}
+
+#close-menu-button {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    bottom: 5%;
+    right: 5%;
+}
+
+#sum-row {
+    align-items: center;
+    margin-top: 20px;
+}
+
+#total-sprite {
+    margin-right: 5px;
+    width: 180px;
+    height: 102px;
+
+}
+
+#total-sum-calculated {
+    margin-left: 5px;
+}
+
+#sum-text {
+    font-family: "DiceText";
+    color: #ffd541;
+    padding-bottom: 25px;
+}
+
+
+
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(0, 2px);
+    }
+
+    50% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+    animation-iteration-count: 1;
+}

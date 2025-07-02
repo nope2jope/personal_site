@@ -1,0 +1,487 @@
+@font-face {
+    font-family: 'BUMP';
+    src: url("./assets/BUMP.ttf");
+}
+
+@font-face {
+    font-family: "Sedate";
+    src: url("./assets/Sedate.ttf");
+}
+
+@font-face {
+    font-family: "Jitter";
+    src: url("./assets/Jitterv2.ttf");
+}
+
+/* ANIMATIONS */
+
+@keyframes ease-in {
+    from {
+        top: -100px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+@keyframes ease-out {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+
+    to {
+        top: -300px;
+        opacity: 0
+    }
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.ease-in {
+    animation-name: ease-in;
+    animation-duration: .5s;
+}
+
+
+/* ordering logic for mobile */
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.lb {
+    order: 1;
+}
+
+.rt {
+    order: 2;
+}
+
+@media (max-width: 800px) {
+    .rt {order:1;}
+    .lb {order:2;}
+    }
+
+/* MAIN */
+
+:root {
+
+    --jet: #1E2328;
+    --granite: #2a2e34;
+    --gray: #383f46;
+
+    --amber: #EC9C04;
+    --goldenrod: #f5b301;
+    --nilla: #fed053;
+
+    --off-white: #f2f3fc;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: auto;
+
+}
+
+body {
+    background-color: var(--goldenrod);
+}
+
+div {
+    position: relative;
+}
+
+details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+
+/* TEXT */
+
+p,
+a {
+    font-family: "Sedate";
+    color: var(--jet);
+    line-height: normal;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.out-nav {
+    cursor: pointer;
+    text-decoration-color: var(--jet);
+    text-decoration: wavy underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 50%;
+}
+
+h1 {
+    font-family: "Jitter";
+    font-size: 2rem;
+    color: var(--jet);
+    margin: 0;
+    line-height: normal;
+}
+
+h3 {
+    font-family: "Jitter";
+    color: var(--jet);
+    line-height: normal;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+li {
+    font-family: "Sedate";
+}
+
+
+/* NAV */
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    color: var(--goldenrod);
+    width: 100%;
+}
+
+nav{
+    background-color: var(--jet);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navbar-links {
+    margin-left: 20px;
+    color: var(--goldenrod);
+}
+
+.nav-name {
+    color: var(--goldenrod)
+}
+
+/* FOOT */
+
+footer {
+    background-color: var(--jet);
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-text {
+    color: var(--nilla);
+    font-size: .75rem;
+}
+
+#foot-name-link {
+    color: var(--amber);
+}
+
+.buffer {
+    height: 50px;
+}
+
+/* BODY CONTENT */
+
+.main-body {
+    margin-top: 5%;
+}
+
+.buttons {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.body-nav {
+    margin: 5% 0;
+}
+
+.col-img {
+    max-width: 100%;
+}
+
+/* WORKS */
+
+.works-banner {
+    width: 100%;
+}
+
+.works-details {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+
+.works-headline {
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* WORKS RE-WORKS */
+
+ul.tree, ul.tree ul {
+    list-style: none;
+     margin: 0;
+     padding: 0;
+   } 
+   ul.tree ul {
+     margin-left: 10px;
+   }
+   ul.tree li {
+     margin: 0;
+     padding: 0 7px;
+     color: var(--jet);
+     border-left:2px solid var(--jet);
+
+   }
+   ul.tree li:last-child {
+       border-left:none;
+   }
+   ul.tree li:before {
+      position:relative;
+      top:-0.3em;
+      height:1em;
+      width:12px;
+      border-bottom:2px solid var(--jet);
+      content:"";
+      display:inline-block;
+      left:-7px;
+   }
+   ul.tree li:last-child:before {
+      border-left:2px solid var(--jet);   
+   }
+
+/* MODALS */
+
+.modal p {
+    color: var(--jet)
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    padding-top: 5%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-close p {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--goldenrod);
+}
+
+/* SWIPER */
+
+.swiper {
+    width: 90%;
+    height: 80%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+  /* FROG ZONE */
+
+
+.zone-header {
+    font-size: 1.15rem;
+    font-family: "BUMP";
+    line-height: normal;
+    font-size: 1rem;
+}
+
+.zone-text {
+    font-family: "BUMP";
+    color: var(--goldenrod);
+    line-height: normal;
+    font-size: .60rem;
+    font-weight: 200;
+}
+
+.card-text {
+    font-family: "BUMP";
+    color: var(--off-white);
+    line-height: normal;
+    font-size: .5rem;
+    font-weight: 200;
+}
+
+.card-facts {
+    width: 95%;
+    position: absolute;
+    top: 5px;
+    padding-top: 15%;
+
+}
+
+.card-sources {
+    width: 90%;
+    position: absolute;
+    padding-top: 15%;
+
+}
+
+.card-image {
+    padding-bottom: 5rem;
+}
+
+
+.frog-zone-banner {
+    text-align: center;
+}
+
+.frog-zone-banner-element {
+    padding: 1rem 0;
+    position: relative;
+    font-family: "BUMP";
+    color: var(--nilla);
+    font-size: 1.65rem;
+    animation-name: waveAnimation ;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite ;
+    animation-delay: calc(.075s * var(--i));
+}
+
+.animated-banner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    
+}
+
+.banner-word {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    margin-right: 10px;
+}
+
+#flip-card {
+    position: relative;
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* initial positioning */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* gentle nudge */
+  .flip:hover .flip-card-inner {
+    transform: rotateY(20deg);
+  }
+
+  .flip.flipped:hover .flip-card-inner {
+    transform: rotateY(160deg)
+  }
+
+
+  .flip.flipped .flip-card-inner{
+    transform: rotateY(180deg);
+  } 
+  
+  /* positioning for front/back card */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* front-card fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: var(--off-white);
+    color: var(--jet);
+    transform: rotateY(180deg);
+  }
+
+
+/* FUNCTIONAL */
+
+.hide {
+    display: none;
+}
+
+.dark {
+    background-color: var(--jet);
+}
+
+.dark-nav {
+    background-color: var(--goldenrod);
+}
+
+.dark-text {
+    color: var(--goldenrod);
+}
+
+.dark-nav-text {
+    color: var(--jet);
+}
